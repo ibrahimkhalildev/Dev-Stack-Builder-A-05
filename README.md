@@ -1,32 +1,54 @@
-# React + TypeScript + Vite
+# 🚀 Dev Stack Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, interactive web application designed to help developers explore, curate, and customize their own ideal development tech stack seamlessly.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Project Overview
+Dev Stack Builder is a simple and interactive single-page application where developers can explore various web technologies from different categories. Users can pick tools to build their own custom dev stack, view their selections in a live sidebar, prevent duplicate picks, and manage their stack with instant toast alerts.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Technologies Used
+- **Frontend Framework:** React (with TypeScript)
+- **Styling:** Tailwind CSS
+- **Build Tool:** Vite
+- **Icons:** Devicon CDN
+- **Feedback & Notifications:** React-Toastify
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## ✨ Key Features
+1. **Interactive Stack Management:** Add or remove technologies dynamically to build your custom toolset in real-time.
+2. **Duplicate Prevention & Alerts:** Prevents adding the same technology twice and provides clear feedback via custom toast alerts.
+3. **Responsive Grid & Sticky Panel:** A 3-column responsive layout with a sticky sidebar that tracks your selected stack status at all times.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+---
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## 💡 React Concept Questions & Answers
+
+### 1. What is JSX, and why is it used in React?
+JSX stands for JavaScript XML. It lets us write HTML-like code directly inside JavaScript. It makes writing and understanding React UI code much easier and faster.
+
+### 2. What is the difference between props and state?
+Props are data passed from a parent component to a child component, and they cannot be changed by the child (read-only). State is internal data managed within the component itself that can change over time based on user interactions.
+
+### 3. What does the `useState` hook do, and where did you use it in this project?
+The `useState` hook lets functional components store and update their own local data. In this project, it was used to store the list of technologies fetched from the JSON file (`technologies`) and to keep track of user-selected items (`myStack`).
+
+### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
+The `useEffect` hook handles side effects like fetching data or setting timers. It was needed here to run the `loadTechnologies()` fetch request once right after the component mounted on the screen.
+
+### 5. Why does every item in a `.map()` list need a unique `key` prop?
+React uses the unique `key` prop to identify which items have changed, been added, or been removed. It helps React update the Virtual DOM accurately and efficiently without re-rendering the entire list.
+
+### 6. What is conditional rendering? Show one place you used it?
+Conditional rendering means showing different UI elements based on certain conditions or state values. In this project, it was used to display the "No technology selected yet" empty message when `myStack.length === 0`, and the list of selected items when the stack was not empty.
+
+### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+A parent passes data down to a child using **props**. A child sends data back up to the parent by calling a **callback function** that was passed down to it from the parent as a prop.
+
+---
+
+## 📄 License
+This project is open-source and available under the MIT License.
