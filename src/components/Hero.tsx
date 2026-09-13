@@ -13,7 +13,7 @@ export default function Hero () {
 
             <h1 className='mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight'>
               Build Your Ideal <br />
-              <span className='text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600'>
+              <span className='text-transparent bg-clip-text bg-linear-to-r from-orange-500 via-rose-500 to-purple-600'>
                 Development Stack
               </span>
             </h1>
@@ -27,7 +27,7 @@ export default function Hero () {
             <div className='mt-8 flex flex-wrap items-center gap-4'>
               <a
                 href='#technologies'
-                className='px-6 py-3 rounded-xl font-medium text-white shadow-md bg-gradient-to-r from-orange-500 via-rose-500 to-purple-600 hover:opacity-95 transition-opacity'
+                className='px-6 py-3 rounded-xl font-medium text-white shadow-md bg-linear-to-r from-orange-500 via-rose-500 to-purple-600 hover:opacity-95 transition-opacity'
               >
                 Explore Technologies
               </a>

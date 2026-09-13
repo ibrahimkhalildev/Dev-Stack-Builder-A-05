@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { toast } from 'react-toastify'
 import type { Technology } from '../types/technology'
 
 const loadTechnologies = async (): Promise<Technology[]> => {
@@ -37,18 +38,22 @@ export default function Technologies () {
   const handleAddToStack = (tech: Technology): void => {
     const isAlreadyAdded = myStack.some(item => item.id === tech.id)
     if (isAlreadyAdded) {
-      alert(`${tech.name} is already in your stack!`)
+      toast.warning(`${tech.name} is already in your stack!`)
       return
     }
     setMyStack(prev => [...prev, tech])
+    toast.success(`${tech.name} added to stack!`)
   }
 
-  const handleRemoveItem = (id: string): void => {
+  const handleRemoveItem = (id: string, name: string): void => {
     setMyStack(prev => prev.filter(item => item.id !== id))
+    toast.info(`${name} removed from stack.`)
   }
 
   const handleRemoveAll = (): void => {
+    if (myStack.length === 0) return
     setMyStack([])
+    toast.error('All technologies removed from stack.')
   }
 
   return (
@@ -169,7 +174,7 @@ export default function Technologies () {
                         </div>
                       </div>
                       <button
-                        onClick={() => handleRemoveItem(item.id)}
+                        onClick={() => handleRemoveItem(item.id, item.name)}
                         className='text-gray-400 hover:text-gray-600 text-xs px-1'
                       >
                         ✕

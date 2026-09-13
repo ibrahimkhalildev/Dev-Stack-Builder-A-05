@@ -74,7 +74,7 @@ const Navbar = () => {
             <button className='text-xs sm:text-sm font-medium text-gray-700 hover:text-gray-900 px-2 sm:px-3 py-1.5 transition-colors'>
               Sign In
             </button>
-            <button className='text-xs sm:text-sm font-medium text-white px-4 sm:px-5 py-2 rounded-full bg-gradient-to-r from-[#FF5E62] via-[#FF2A6D] to-[#9B51E0] shadow-sm hover:opacity-95 transition-opacity'>
+            <button className='text-xs sm:text-sm font-medium text-white px-4 sm:px-5 py-2 rounded-full bg-linear-to-r from-[#FF5E62] via-[#FF2A6D] to-[#9B51E0] shadow-sm hover:opacity-95 transition-opacity'>
               Sign Up
             </button>
           </div>
